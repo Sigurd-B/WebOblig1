@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Title of titles</title>
+        <link rel="stylesheet" href="Oblig1_Style.css">
+    </head>
+    <body>
+        <style>
+            .page{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                align-items: center;
+            }
+            .container{
+                width: 75%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                padding: 2%;
+            }
+
+            .box{
+                border: 5px solid rgb(95, 95, 255);
+                border-radius: 10px;
+                width: 18em;
+                height: 7em;
+                margin: 1em;
+                padding: 10px;
+            }
+            .text{
+                width: 22em;
+                height: auto;
+                text-align: left;
+                margin: 1em;
+                padding: 10px;
+            }
+            
+            #quote{
+                background-color: rgb(141, 141, 141);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+            }
+            #quoteBox{
+                width: 50%;
+                padding: 20px;
+                align-self: center;
+                justify-self: center;
+            }
+            #name{
+                text-align: right;
+                font-weight: bold;
+            }
+            #quoteText{
+                text-align: left;
+            }
+            #action{
+                background-color: rgb(28, 105, 248);
+                color: white;
+                border-radius: 6px;
+                width: 60%;
+                height: 5em;
+                margin: 2em;
+                padding: 10px;
+                display: grid;
+                grid-template-areas: "one one two";
+            }
+            #action>p{
+                margin: 0px;
+            }
+            #signUp_one{
+                width: fit-content;
+                text-align: left;
+                grid-area: one;
+
+            }
+            #signUp_two{
+                width: fit-content;
+                align-self: center;
+                justify-self: center;
+                grid-area: two;
+            }
+            #signUpV2{
+                background-color: rgb(28, 105, 248);
+                color: white;
+                border: 2px solid white;
+                border-radius: 8px;
+                width: 95px;
+                height: 25px;
+            }
+            
+        </style>
+        <header>
+            <h2>Header Logo</h2><br>
+            <a href="Oblig1.html">Page 1</a>
+            <a href="Oblig1p2.html">Page 2</a>
+            <a href="Oblig1p3.html">Page 3</a>
+            <hr>
+            <div class="header_container">
+                <div class="one">
+                    <h1>This Website is awesome</h1>
+                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                        Urna conubia consequat sem aliquam eu efficitur 
+                        est?</p>
+                    <button id="signUp">Sign up</button>
+                </div>
+                <div class="two">Img placeholder</div>
+            </div>
+        </header>
+
+        <h2>Some random information</h2>
+        <div class="page">
+            <div class="container">
+                <div class="box" id="one"></div>
+                <div class="text" id="two"><p>Lorem ipsum odor amet, 
+                    consectetuer adipiscing elit. Urna 
+                    conubia consequat sem aliquam eu 
+                    efficitur est? Netus ultrices class 
+                    id nullam sollicitudin adipiscing, 
+                    vulputate porta purus.</p>
+                </div>
+                
+                <div class="text" id="four"><p>Lorem ipsum odor amet, consectetuer 
+                    adipiscing elit. Urna conubia consequat sem aliquam 
+                    eu efficitur est? Netus ultrices class id nullam sollicitudin 
+                    adipiscing, vulputate porta purus. </p>
+                </div>
+                <div class="box" id="three"></div>
+        </div>
+        <div id="quote">
+            <div id="quoteBox">
+                <p id="quoteText" style="font-family: Roboto-Italic;"> Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                    Urna conubia consequat sem aliquam eu efficitur est? 
+                    Netus ultrices class id nullam sollicitudin adipiscing, 
+                    vulputate porta purus.</p>
+                <p id="name">-Thor</p>
+            </div>
+        </div>
+        <div id="action">
+            <div id="signUp_one">
+                <p>Call to action! It's time!</p>
+                <p>Urna conubia consequat sem aliquam 
+                    eu efficitur est? Urna conubia consequat sem aliquam</p>
+            </div>
+            <div id="signUp_two">
+                <button id="signUpV2">Sign up</button>
+            </div>
+        </div>
+    </div>
+        <footer>
+            <p>Copyright @</p>
+        </footer>
+        <script>
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<html></html>
+    <head>
+        <title>Title of titles</title>
+        <link rel="stylesheet" href="Oblig1_Style.css">
+    </head>
+    <body>
+        <style>
+            #weatherContainer{
+                display: grid;
+                grid-template: "Norway Japan Germany" 
+                               "USA France Russia";
+                grid-template-rows: auto;
+                grid-template-columns: 25% 25% 25%;
+                justify-content: center;
+                height: fit-content;
+            }            
+            #Norway{
+                grid-area: Norway;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }
+            #Japan{
+                grid-area: Japan;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }
+            #Germany{
+                grid-area: Germany;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }
+            #USA{
+                grid-area: USA;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }
+            #France{
+                grid-area: France;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }
+            #Russia{
+                grid-area: Russia;
+                width: 100%;
+                height: auto;
+                border: 1px solid black;
+            }            
+        </style>
+        <header>
+            <h2>Header Logo</h2><br>
+            <a href="Oblig1.html">Page 1</a>
+            <a href="Oblig1p2.html">Page 2</a>
+            <a href="Oblig1p3.html">Page 3</a>
+            <hr>
+            <div class="header_container">
+                <div class="one">
+                    <h1>This Website is awesome</h1>
+                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                        Urna conubia consequat sem aliquam eu efficitur 
+                        est?</p>
+                    <button id="signUp" onclick="fjern()">Sign up</button>
+                </div>
+                <div class="two">Img placeholder</div>
+            </div>
+        </header>
+
+    <div class="page">
+        <div id="weatherContainer">
+            <div id="Norway">
+                <h3>Oslo, Norway</h3> 
+                <p id="pTidN"></p>
+                <p id="pTempN"></p>
+                <p id="pHumN"></p>
+                <p id="pRainN"></p>
+                <p id="pWindN"></p>
+            </div>
+            <div id="Japan">
+                <h3>Tokyo, Japan</h3>
+                <p id="pTidJ"></p>
+                <p id="pTempJ"></p>
+                <p id="pHumJ"></p>
+                <p id="pRainJ"></p>
+                <p id="pWindJ"></p>
+            </div>
+            <div id="Germany">
+                <h3>Hamburg, Germany</h3>
+                <p id="pTidG"></p>
+                <p id="pTempG"></p>
+                <p id="pHumG"></p>
+                <p id="pRainG"></p>
+                <p id="pWindG"></p>
+            </div>
+            <div id="USA">
+                <h3>New York, USA</h3> 
+                <p id="pTidU"></p>
+                <p id="pTempU"></p>
+                <p id="pHumU"></p>
+                <p id="pRainU"></p>
+                <p id="pWindU"></p>
+            </div>
+            <div id="France">
+                <h3>Paris, France</h3>
+                <p id="pTidF"></p>
+                <p id="pTempF"></p>
+                <p id="pHumF"></p>
+                <p id="pRainF"></p>
+                <p id="pWindF"></p>
+            </div>
+            <div id="Russia">
+                <h3>Moscow, Russia</h3>
+                <p id="pTidR"></p>
+                <p id="pTempR"></p>
+                <p id="pHumR"></p>
+                <p id="pRainR"></p>
+                <p id="pWindR"></p>
+            </div>
+        </div>
+    </div>
+        <footer>
+            <p>Copyright @</p>
+        </footer>
+        <script>
+            const N = document.getElementById("Norway");  
+            const J = document.getElementById("Japan");  
+            const G = document.getElementById("Garmany");  
+            const U = document.getElementById("USA");  
+            const F = document.getElementById("France");  
+            const R = document.getElementById("Russia");
+            
+            const tNp = document.getElementById("pTidN");  
+            const tJp = document.getElementById("pTidJ");  
+            const tGp = document.getElementById("pTidG");  
+            const tUp = document.getElementById("pTidU");  
+            const tFp = document.getElementById("pTidF");  
+            const tRp = document.getElementById("pTidR");  
+
+            const tmpNp = document.getElementById("pTempN");  
+            const tmpJp = document.getElementById("pTempJ");  
+            const tmpGp = document.getElementById("pTempG");  
+            const tmpUp = document.getElementById("pTempU");  
+            const tmpFp = document.getElementById("pTempF");  
+            const tmpRp = document.getElementById("pTempR");
+            
+            const hNp = document.getElementById("pHumN");  
+            const hJp = document.getElementById("pHumJ");  
+            const hGp = document.getElementById("pHumG");  
+            const hUp = document.getElementById("pHumU");  
+            const hFp = document.getElementById("pHumF");  
+            const hRp = document.getElementById("pHumR");
+            
+            const rNp = document.getElementById("pRainN");  
+            const rJp = document.getElementById("pRainJ");  
+            const rGp = document.getElementById("pRainG");  
+            const rUp = document.getElementById("pRainU");  
+            const rFp = document.getElementById("pRainF");  
+            const rRp = document.getElementById("pRainR");
+            
+            const wNp = document.getElementById("pWindN");  
+            const wJp = document.getElementById("pWindJ");  
+            const wGp = document.getElementById("pWindG");  
+            const wUp = document.getElementById("pWindU");  
+            const wFp = document.getElementById("pWindF");  
+            const wRp = document.getElementById("pWindR");
+
+            function oppdater(){
+                fetch("https://api.open-meteo.com/v1/forecast?latitude=59.9127,35.6895,53.5507,40.7143,48.8534,55.7522&longitude=10.7461,139.6917,9.993,-74.006,2.3488,37.6156&current=temperature_2m,relative_humidity_2m,rain,wind_speed_10m")
+                    .then((response) => {
+                        if (!response.ok){
+                            throw new Error("Error with the status " + response.status);
+                            
+                        }
+                        return response.json();
+                    }).then((temp) => {
+                        console.log(temp);
+                        tNp.innerText = "Tid: " + temp[0].current.time;
+                        tmpNp.innerText = "Temperature: " + temp[0].current.temperature_2m + " " + temp[0].current_units.temperature_2m;
+                        hNp.innerText = "Humidety: " + temp[0].current.relative_humidity_2m + "%";
+                        rNp.innerText = "Rain: " + temp[0].current.rain;
+                        wNp.innerText = "Wind: " + temp[0].current.wind_speed_10m + "km/h";
+
+                        tJp.innerText = "Tid: " + temp[1].current.time;
+                        tmpJp.innerText = "Temperature: " + temp[1].current.temperature_2m + " " + temp[1].current_units.temperature_2m;
+                        hJp.innerText = "Humidety: " + temp[1].current.relative_humidity_2m + "%";
+                        rJp.innerText = "Rain: " + temp[1].current.rain;
+                        wJp.innerText = "Wind: " + temp[1].current.wind_speed_10m + "km/h";
+
+                        tGp.innerText = "Tid: " + temp[2].current.time;
+                        tmpGp.innerText = "Temperature: " + temp[2].current.temperature_2m + " " + temp[2].current_units.temperature_2m;
+                        hGp.innerText = "Humidety: " + temp[2].current.relative_humidity_2m + "%";
+                        rGp.innerText = "Rain: " + temp[2].current.rain;
+                        wGp.innerText = "Wind: " + temp[2].current.wind_speed_10m + "km/h";
+
+                        tUp.innerText = "Tid: " + temp[3].current.time;
+                        tmpUp.innerText = "Temperature: " + temp[3].current.temperature_2m + " " + temp[3].current_units.temperature_2m;
+                        hUp.innerText = "Humidety: " + temp[3].current.relative_humidity_2m + "%";
+                        rUp.innerText = "Rain: " + temp[3].current.rain;
+                        wUp.innerText = "Wind: " + temp[3].current.wind_speed_10m + "km/h";
+
+                        tFp.innerText = "Tid: " + temp[4].current.time;
+                        tmpFp.innerText = "Temperature: " + temp[4].current.temperature_2m + " " + temp[4].current_units.temperature_2m;
+                        hFp.innerText = "Humidety: " + temp[4].current.relative_humidity_2m + "%";
+                        rFp.innerText = "Rain: " + temp[4].current.rain;
+                        wFp.innerText = "Wind: " + temp[4].current.wind_speed_10m + "km/h";
+
+                        tRp.innerText = "Tid: " + temp[5].current.time;
+                        tmpRp.innerText = "Temperature: " + temp[5].current.temperature_2m + " " + temp[5].current_units.temperature_2m;
+                        hRp.innerText = "Humidety: " + temp[5].current.relative_humidity_2m + "%";
+                        rRp.innerText = "Rain: " + temp[5].current.rain;
+                        wRp.innerText = "Wind: " + temp[5].current.wind_speed_10m + "km/h";
+                    })
+            }
+            oppdater();
+            setInterval(oppdater, 30000);
+        </script>
+    </body>
+</html>
